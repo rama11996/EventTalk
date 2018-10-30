@@ -16,7 +16,9 @@ export default {
 @import 'assets/styles/includes'
 
 section.sign-up
-  background: $event-blue
+  background: url(/assets/images/hero-banner.png)  $event-blue
+  background-size: contain
+  background-repeat: no-repeat
   color: $white
   .container
     .content  
