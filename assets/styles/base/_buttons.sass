@@ -6,7 +6,6 @@
   border-radius: 12px
   text-decoration: none
   padding: $space*1 $space*2.5
-  text-transform: uppercase
   font-size: 1.25rem
   cursor: pointer
   line-height: 1.625rem
@@ -27,6 +26,13 @@
 
 .btn.small
   @include btn($action-bg, $action-fg, $action-border)
+  padding: $space*0.7 $space*2
+  font-weight: 600
+  font-size: 1rem
+  line-height: 2rem
+
+.btn.primary-small
+  @include btn($primary-action-bg, $primary-action-fg, $primary-action-border)
   padding: $space*0.7 $space*2
   font-weight: 600
   font-size: 1rem
