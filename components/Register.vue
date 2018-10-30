@@ -1,17 +1,15 @@
 <template lang="pug">
-.page
-  Register
+section.register
+  .container
+    h1 FreeLancers Conference 2018
 </template>
 
+
 <script>
-import Register from '@/components/Register'
 export default {
-  components: {
-    Register
-  }
+  
 }
 </script>
-
 
 <style lang="sass" scoped>
 @import 'assets/styles/includes'
