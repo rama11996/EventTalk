@@ -11,7 +11,6 @@ section.app-footer
         img(src="@/assets/images/global.png")
         img(src="@/assets/images/be.png")
         img(src="@/assets/images/linkedin.png")
-    .divider
     .venue
       img.location(src="@/assets/images/location.png")
       span Venue Location
@@ -50,20 +49,17 @@ section.app-footer
 
 //social
 .social
+  flex: 1
   .external
     padding-top: $space*2
     img
       margin: $space/2
-
-//Divider
-.divider
-  width: 2px
-  height: 20rem
-  background-color: $white
+  
 
 .venue
-  // margin-right: 5rem
-  width: 30rem
+  flex: 1
+  border-left: 1px solid $white
+  padding-left: $space*8
   span
     font-size: 2rem
   .date
