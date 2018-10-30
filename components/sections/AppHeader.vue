@@ -53,8 +53,6 @@ section.app-header
 
 
 .app-header.dark
-  background: $neutral
-  color: $black
   transition: background-color 0.35s, border 0.35s
   position: fixed
   top: 0
