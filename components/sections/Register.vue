@@ -1,9 +1,7 @@
 <template lang="pug">
 section.register
   .container
-    h1 register
-    button.btn Register Now
-    button.btn.btn-primary Register
+    h2 register
 </template>
 <script>
 export default {

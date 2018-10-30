@@ -1,7 +1,7 @@
 <template lang="pug">
 section.speakers
   .container
-    h1 speakers
+    h2 speakers
 </template>
 <script>
 export default {

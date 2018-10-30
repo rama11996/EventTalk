@@ -1,7 +1,7 @@
 <template lang="pug">
 section.tickets
   .container
-    h1 tickets
+    h2 tickets
 </template>
 <script>
 export default {

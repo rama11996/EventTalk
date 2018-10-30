@@ -1,7 +1,7 @@
 <template lang="pug">
 section.sponsors
   .container
-    h1 sponsors
+    h2 sponsors
 </template>
 <script>
 export default {

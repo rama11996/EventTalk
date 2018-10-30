@@ -1,7 +1,7 @@
 <template lang="pug">
 section.about
   .container
-    h1 About
+    h2 About
 </template>
 <script>
 export default {

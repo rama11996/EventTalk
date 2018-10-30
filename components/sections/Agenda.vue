@@ -1,7 +1,7 @@
 <template lang="pug">
 section.agenda
   .container
-    h1 agenda
+    h2 agenda
 </template>
 <script>
 export default {

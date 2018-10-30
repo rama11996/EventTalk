@@ -1,7 +1,7 @@
 <template lang="pug">
 section.sign-up
   .container
-    h1 signup
+    h2 signup
 </template>
 <script>
 export default {
