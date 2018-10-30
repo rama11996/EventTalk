@@ -3,10 +3,9 @@
   color: $fg
   border: 3px solid $border
   font-weight: bold
-  border-radius: 15px
+  border-radius: 12px
   text-decoration: none
   padding: $space*1.5 $space*7
-  text-transform: uppercase
   font-size: 1.25rem
   cursor: pointer
   line-height: 1.625rem
@@ -17,10 +16,17 @@
 
 .btn
   @include btn($action-bg, $action-fg, $action-border)
-  &:hover
-    @include btn($action-hover-bg, $action-hover-fg, $action-hover-border)
+  padding: $space*1.5 $space*5
+
 
 .btn.btn-primary
   @include btn($primary-action-bg, $primary-action-fg, $primary-action-border)
-  &:hover
-    @include btn($primary-action-hover-bg, $primary-action-hover-fg, $primary-action-hover-border)
+
+
+
+.btn.small
+  @include btn($action-bg, $action-fg, $action-border)
+  padding: $space*0.7 $space*2
+  font-weight: 600
+  font-size: 1rem
+  line-height: 2rem
