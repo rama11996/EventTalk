@@ -21,23 +21,23 @@ section.sign-up
   .container
     .content  
       text-align: center
-      padding: $space*2.25
+      padding: $space*3.5
       h2
         width: 65%
         margin: 0 auto
-        // margin-top: $space*1.5
+        
         padding-bottom: $space*2
       p
         margin: 0 auto
-        width: 45%
+        width: 62%
         color: $white
         padding-bottom: $space*2
       .btn
-        // margin: $space*3
         border-radius: 0 10px 10px 0
+        padding: $space*1.2 $space*2.5
         
       input
-        padding: $space*1.5 $space*12 $space*1.5 $space
+        padding: $space*1.8 $space*16 $space*1.5 $space
         border-radius: 10px 0 0 10px
         border: none
 </style>
