@@ -20,8 +20,6 @@ section.speakers
           .story
             h5 Story  
             img(src="@/assets/images/arrow.png")
-
-
     button.btn.btn-primary View All Speakers
 
 
@@ -74,41 +72,36 @@ section.speakers
           height: 150px
           text-align: center
           padding: $space/2
+          transition: all 0.5s
+          @include absolute
+          top: 18rem
           .name
             margin-top: 1.5rem
             font-weight: 700
-            transition: .9s ease
-        &:hover
-          .name
-            margin-top: 0px
         .social
           background: $event-hoverpink
           overflow: hidden
           width: 100%
           height: 0px
-          transition: .9s ease
+          transition: all 0.5s
           position: absolute
           bottom: 0
           left: 0
           right: 0
-          z-index: 1000
           .logos
             img
-              padding: 0.3rem
-              width: 30px 
+              margin: $space/2
         &:hover
+          cursor: pointer
+          .details
+            height: 180px
           .social
-            display: flex
-            justify-content: space-between
+            @include flex
             height: 15% 
             padding: 0.5rem
             .story
-              padding: 0.7rem
-              display: flex
-              justify-content: space-around
+              @include flex
               color: $white
-              img
-                width: 30px
         
 
 section.speakers
