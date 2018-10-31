@@ -15,7 +15,12 @@ section.speakers
           .logos
             img(src="@/assets/images/facebook.png")
             img(src="@/assets/images/twitter.png")
-            img(src="@/assets/images/Instagram.png")
+            img(src="@/assets/images/instagram.png")
+            img(src="@/assets/images/tripple.png")
+          .story
+            h5 Story  
+            img(src="@/assets/images/arrow.png")
+
 
     button.btn.btn-primary View All Speakers
 
@@ -72,9 +77,9 @@ section.speakers
           .name
             margin-top: 1.5rem
             font-weight: 700
+            transition: .9s ease
         &:hover
           .name
-            transition: .9s ease
             margin-top: 0px
         .social
           background: $event-hoverpink
@@ -88,14 +93,22 @@ section.speakers
           right: 0
           z-index: 1000
           .logos
-            padding: 1rem
             img
+              padding: 0.3rem
               width: 30px 
         &:hover
           .social
+            display: flex
+            justify-content: space-between
             height: 15% 
-            display: block    
-            // margin-top: 1rem
+            padding: 0.5rem
+            .story
+              padding: 0.7rem
+              display: flex
+              justify-content: space-around
+              color: $white
+              img
+                width: 30px
         
 
 section.speakers
