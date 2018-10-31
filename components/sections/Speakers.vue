@@ -68,6 +68,11 @@ section.speakers
           overflow: hidden
           img
             min-width: 300px
+            -webkit-filter: grayscale(100%)
+            filter: grayscale(100%)
+            &:hover
+              -webkit-filter: grayscale(100%)
+              filter: grayscale(0%)
         .details
           background: #FFFFFF
           height: 150px
