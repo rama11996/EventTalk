@@ -4,11 +4,17 @@ section.tickets
     .ticket-content
       h2 Book Your Conference Tickets now !
       .tabs
-        a.btn.btn.primary-small Personal
-        a.btn.btn.primary-small Company
+        a.btn(
+          :class="{'primary-small': active === 'Standard'}"
+          @click="activate('Standard')") 
+          | Standard
+        a.btn(
+          :class="{'primary-small': active === 'Premium'}"
+          @click="activate('Premium')") 
+          | Premium
       p loremcombined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humourc
     .pricing
-      .price-card(v-for="(p, i) in pricing", :key="i", :class="p.type.toLowerCase()")
+      .price-card(v-for="(p, i) in pricing", :key="i", :class="{active: active === p.type}")
         h2 {{ p.type }}
         h4 {{ p.price }}
         ul
@@ -21,30 +27,34 @@ section.tickets
 export default {
   data () {
     return {
+      active: 'Standard',
       pricing: [
         {
           type: 'Standard',
-          price: '$55 month',
+          price: '$199 month',
           features: [
             'Entrance',
             'Coffe break',
-            'One free bonus theme',
-            'Freen lunch and snacks',
-            'certificate and ebook'
+            'Free lunch and snacks',
           ]
         },
         {
           type: 'Premium',
-          price: '$55 month',
+          price: '$299 month',
           features: [
             'Entrance',
             'Coffe break',
             'One free bonus theme',
-            'Freen lunch and snacks',
+            'Free lunch and snacks',
             'certificate and ebook'
           ]
         }
       ]
+    }
+  },
+  methods: {
+    activate (type) {
+      this.active = type
     }
   }
 }
@@ -57,6 +67,8 @@ section.tickets
   color: $black
   .container
     @include flex
+    overflow: visible
+
 
 .ticket-content
   width: 30rem
@@ -69,11 +81,16 @@ section.tickets
     border-radius: 40px
     padding: $space*1.5
     text-transform: normal
-    a
+    a.btn
       font-size: 1.5rem
       border-radius: 50px
       padding: $space/2 $space*2.5
-
+      background: none
+      color: $event-blue
+      border-color: transparent
+      &.primary-small
+        background: $event-blue
+        color: $white
 a
   &:first-child
     margin-right: $space/2
@@ -85,10 +102,11 @@ p
 
 .pricing
   flex: 1
+  overflow: visible
   .price-card
     background: $white
     text-align: center
-    width: 30rem
+    width: 25rem
     height: 40rem
     margin: 1rem
   h2
@@ -122,11 +140,12 @@ p
   height: 60rem
   .price-card
     @include absolute
-    &.standard
-      z-index: 1
-    &.premium
-      transform: translateX(20rem)
-      opacity: 0.5
-      height: 35rem
+    transform: translateX(15rem) scale(0.9)
+    z-index: 1
+    opacity: 0.5
+    &.active
+      opacity: 1
+      z-index: 2
+      transform: scale(1)
 </style>
 
