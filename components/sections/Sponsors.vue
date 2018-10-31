@@ -7,6 +7,8 @@ section.sponsors
       li.sponsor-item(v-for="(s, i) in sponsors", :key="i")
         .thumb
           img(:src="s.image")
+    .cta
+      a.btn.btn-primary View All Sponsors
 </template>
 <script>
 export default {
@@ -51,6 +53,7 @@ export default {
 section.sponsors
   background: $white
   color: $black
+  padding: $space*4
   .container
     text-align: center
     p, h2
@@ -72,8 +75,15 @@ section.sponsors
     &:nth-last-child(-n+3)
       border-bottom: none
     img
-      // margin: $space*3
       padding: $space*4
+      opacity: 0.1
+      cursor: pointer
+      &:hover
+        opacity: 1
+        transition: all 0.5s
+      
 
+.cta
+  padding-top: $space*5
 </style>
 
