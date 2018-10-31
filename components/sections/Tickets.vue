@@ -135,17 +135,45 @@ p
       margin-right: 2rem
 
 //Animations
+
+@keyframes activate
+  0%
+    opacity: 0.5
+    transform: translateX(15rem) scale(0.9)
+  50% 
+    opacity: 1
+    transform: translateX(20rem) scale(1)
+  100%
+    opacity: 1
+    transform: translateX(0) scale(1)
+
+@keyframes deactivate
+  0%
+    opacity: 1
+    transform: translateX(0) scale(1)
+  50% 
+    opacity: 1
+    transform: translateX(-5rem) scale(0.9)
+  100%
+    opacity: 0.5
+    transform: translateX(15rem) scale(0.9)
+
+
+
 .pricing
   position: relative
   height: 60rem
   .price-card
     @include absolute
+    box-shadow: 0 0 25px 5px rgba($black, 0.1)
+    animation: deactivate 1s ease-in-out
     transform: translateX(15rem) scale(0.9)
     z-index: 1
     opacity: 0.5
     &.active
-      opacity: 1
+      animation: activate 1s ease-in-out
+      transform: translateX(0) scale(1)
       z-index: 2
-      transform: scale(1)
+      opacity: 1
 </style>
 

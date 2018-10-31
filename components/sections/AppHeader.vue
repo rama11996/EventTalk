@@ -1,21 +1,27 @@
 <template lang="pug">
 section.app-header(:class="{dark: isScroll}")
   .container
-    .logo
+    a.logo(href="#", v-scroll-to="'.hero'")
       img(src="@/assets/images/logo.png", alt="")
     nav.navigation
       .primary
-        a About
-        a Agenda
-        a Speakers
-        a Venue
-        a FAQ
+        a(href="#", v-scroll-to="'.about'") About
+        a(href="#", v-scroll-to="'.speakers'") Speakers
+        a(href="#", v-scroll-to="'.agenda'") Agenda
+        a(href="#", v-scroll-to="'.sign-up'") SignUp
+        a(href="#", v-scroll-to="'.sponsors'") Sponsors
+        a(href="#", v-scroll-to="'.register'") Register
+        a(href="#", v-scroll-to="'.app-footer'") Contact
       .secondary
-        a.btn.small Buy Ticket
+        a.btn.small(href="#", v-scroll-to="'.tickets'") Buy Ticket
 </template>
 
 
 <script>
+import Vue from 'vue'
+import vueScrollTo from 'vue-scroll-to'
+ 
+Vue.use(vueScrollTo)
 export default {
   data () {
     return {
@@ -49,7 +55,9 @@ section.app-header
     .navigation
       @include flex
       .primary a
-        margin: $space*2
+        margin: $space
+        text-decoration: none
+        color: $white
 
 
 .app-header.dark

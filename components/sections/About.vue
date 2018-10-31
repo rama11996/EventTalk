@@ -38,6 +38,7 @@ export default {
 section.about
   background: $white
   color: $black
+  padding: $space*3
   .content
     text-align: center
     padding: $space*3

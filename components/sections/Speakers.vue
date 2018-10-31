@@ -47,6 +47,7 @@ section.speakers
   background-repeat: no-repeat
   min-height: 100vh
   color: $black
+  padding: $space*3
   .container
     .content
       text-align: center
