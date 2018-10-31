@@ -7,12 +7,15 @@ section.tickets
         a.btn.btn.primary-small Personal
         a.btn.btn.primary-small Company
       p loremcombined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humourc
-    ul.pricing(v-for="(p, i) in pricing", :key="i")
-      li.price-item
+    .pricing
+      .price-card(v-for="(p, i) in pricing", :key="i", :class="p.type.toLowerCase()")
         h2 {{ p.type }}
         h4 {{ p.price }}
-        .feature(v-for="(f, j) in p.features" :key="i")
-          p {{ f }}
+        ul
+          li.feature(v-for="(f, j) in p.features" :key="j") 
+            span {{ f }}
+        .cta
+          a.btn.btn-primary Buy Ticket
 </template>
 <script>
 export default {
@@ -81,12 +84,13 @@ p
   padding-top: $space*3
 
 .pricing
-  // flex: 1
-  background: $white
-  padding: $space*5
-  text-align: center
-  &:last-child
-    display: none
+  flex: 1
+  .price-card
+    background: $white
+    text-align: center
+    width: 30rem
+    height: 40rem
+    margin: 1rem
   h2
     font-weight: normal
     border-bottom: 2px solid $neutral
@@ -96,19 +100,33 @@ p
     color: $event-actionpink
     border-bottom: 2px solid $neutral
     padding: $space
+  .cta
+    padding-top: $space*2
   .feature
     text-align: left
-    p
-      margin-left: $space*2
-      &:before
-        content: '\2714'
-        color: $event-actionpink
-        border: 2px solid $event-actionpink
-        border-radius: 50%
-        width: 1.5rem
-        height: 1.5rem
-        display: inline-block
-        text-align: center
-        margin-left: 2rem
+    margin: $space*2
+    &:before
+      content: '\2714'
+      color: $event-actionpink
+      border: 2px solid $event-actionpink
+      border-radius: 50%
+      width: 1.5rem
+      height: 1.5rem
+      display: inline-block
+      text-align: center
+      margin-right: 2rem
+
+//Animations
+.pricing
+  position: relative
+  height: 60rem
+  .price-card
+    @include absolute
+    &.standard
+      z-index: 1
+    &.premium
+      transform: translateX(20rem)
+      opacity: 0.5
+      height: 35rem
 </style>
 
