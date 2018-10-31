@@ -12,9 +12,10 @@ section.speakers
           h4.name {{ speaker.name }}
           p {{ speaker.company }}
         .social
-          img(src="@/assets/images/facebook.png")
-          img(src="@/assets/images/twitter.png")
-          img(src="@/assets/images/Instagram.png")
+          .logos
+            img(src="@/assets/images/facebook.png")
+            img(src="@/assets/images/twitter.png")
+            img(src="@/assets/images/Instagram.png")
 
     button.btn.btn-primary View All Speakers
 
@@ -55,6 +56,7 @@ section.speakers
       .card
         width: 300px
         height: 450px
+        position: relative
         .image
           width: 300px
           height: 300px
@@ -64,18 +66,38 @@ section.speakers
             min-width: 300px
         .details
           background: #FFFFFF
-          height: 100px
+          height: 150px
           text-align: center
           padding: $space/2
           .name
+            margin-top: 1.5rem
             font-weight: 700
+        &:hover
+          .name
+            transition: .9s ease
+            margin-top: 0px
         .social
-          padding:  $space
           background: $event-hoverpink
-          display: none
-          img
-            width: 30px    
-          
+          overflow: hidden
+          width: 100%
+          height: 0px
+          transition: .9s ease
+          position: absolute
+          bottom: 0
+          left: 0
+          right: 0
+          z-index: 1000
+          .logos
+            padding: 1rem
+            img
+              width: 30px 
+        &:hover
+          .social
+            height: 15% 
+            display: block    
+            // margin-top: 1rem
+        
+
 section.speakers
   .container
     .btn
