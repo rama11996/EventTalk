@@ -5,7 +5,7 @@ section.agenda
     p Conference deticated to remarkable events
     .content
       nav
-        a.btn.btn-primary(@click="select(i)", v-for="(day, i) in data", :key="i") {{ day.day }}
+        a.btn(@click="select(i)", v-for="(day, i) in data", :key="i", :class="{'btn-primary': selected === i }") {{ day.day }}
       .sessions(v-if="selected === i", v-for="(day, i) in data", :key="i")
         .session(v-for="(s, j) in day.session", :key="j")
           .time
@@ -46,9 +46,16 @@ section.agenda
   nav
     margin-top: $space*5
     text-align: center
-    a
+    a.btn
       margin: $space*2
       font-size: 1.75rem !important
+      padding: $space/2 $space*2.5
+      background: none
+      color: #656565
+      border-color: transparent
+      &.btn-primary
+        background: $event-blue
+        color: $white
 
 .sessions
   margin-top: $space*7
