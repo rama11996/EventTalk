@@ -57,10 +57,14 @@ section.speakers
     .profile
       @include distribute
       margin: $space*3 0
+      @media (max-width: $breakpoint-desktop)
+        display: flex
+        flex-direction: column
       .card
         width: 300px
         height: 450px
         position: relative
+        margin-bottom: $space
         .image
           width: 300px
           height: 300px

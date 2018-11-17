@@ -50,9 +50,15 @@ p
 
 .item
   @include flex
-  &:nth-child(odd)
-    flex-direction: row-reverse
+  @media (max-width: $breakpoint-tab-3)
+    flex-direction: column-reverse
+  margin-bottom: $space*2
+  @media (min-width: $breakpoint-tab-3)
+    &:nth-child(odd)
+      flex-direction: row-reverse
   .thumb, .item-content
     flex: 1
+  
+
 </style>
 
