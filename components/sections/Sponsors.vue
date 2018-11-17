@@ -53,7 +53,9 @@ export default {
 section.sponsors
   background: $white
   color: $black
-  padding: $space*4
+  @media (min-width: $breakpoint-tab-1)
+    padding: $space*4
+
   .container
     text-align: center
     p, h2
@@ -66,14 +68,19 @@ section.sponsors
   padding-top: $space*3
   text-align: center
   .sponsor-item
-    width: 350px
-    height: 200px
+    width: 31.33%
+    height: 150px
     border-right: 1px solid #d5d5d7
     border-bottom: 1px solid #d5d5d7
     &:nth-child(3n+3)
       border-right: none
     &:nth-last-child(-n+3)
       border-bottom: none
+    @media (max-width: $breakpoint-desktop)   
+      width: 50%
+      border-right: none
+      border-bottom: none 
+   
     img
       padding: $space*4
       opacity: 0.1
@@ -81,9 +88,10 @@ section.sponsors
       &:hover
         opacity: 1
         transition: all 0.5s
-      
-
 .cta
   padding-top: $space*5
+section.sponsors
+  .container
+
 </style>
 

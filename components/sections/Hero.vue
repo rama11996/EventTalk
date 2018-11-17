@@ -5,7 +5,7 @@ section.hero
     .content
       h2 Freelancers 
       h1 Conferences 2018
-      h5 12 - 15 November with over 20 sessions-Bangalore, India
+      h5 12 - 15 November with over 20 sessions - Bangalore,India
       .cta
         a.btn Register Now
     .image
@@ -24,7 +24,7 @@ export default {
 @import 'assets/styles/includes'
 
 section.hero
-  background: url(/assets/images/hero-banner.png) $event-blue
+  background: url(/static/images/herobanner.png) $event-blue
   background-size: contain
   background-repeat: no-repeat
   color: $white
@@ -32,13 +32,23 @@ section.hero
   padding-top: $space*10
   .container
     @include spread
+    @media (max-width: $breakpoint-tab-3)
+      flex-direction: column
+      .image
+        margin: $space*10
+        
     .content
-      text-align: left
+      @media (max-width: $breakpoint-tab-3)
+        text-align: center
+        h2
+          text-align: center
       .cta
         margin-top: $space*6
+        
 h2
   text-align: left
   font-size: 3.5rem
   font-weight: normal
+
 
 </style>

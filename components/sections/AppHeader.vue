@@ -1,8 +1,11 @@
 <template lang="pug">
-section.app-header(:class="{dark: isScroll}")
+section.app-header(:class="{dark: isScroll, open: open}")
   .container
     a.logo(href="#", v-scroll-to="'.hero'")
       img(src="@/assets/images/logo.png", alt="")
+    .mask(v-if="open", @click="hide()")  
+    a.hamburger(@click="toggle()")
+       img(src="@/assets/images/hamburger.png")    
     nav.navigation
       .primary
         a(href="#", v-scroll-to="'.about'") About
@@ -14,6 +17,7 @@ section.app-header(:class="{dark: isScroll}")
         a(href="#", v-scroll-to="'.app-footer'") Contact
       .secondary
         a.btn.small(href="#", v-scroll-to="'.tickets'") Buy Ticket
+
 </template>
 
 
@@ -25,7 +29,8 @@ Vue.use(vueScrollTo)
 export default {
   data () {
     return {
-      isScroll: false
+      isScroll: false,
+      open: false
     }
   },
   created () {
@@ -38,6 +43,15 @@ export default {
   methods: {
     handleScroll () {
       this.isScroll = window.scrollY >= 60
+    },
+    toggle(){
+      this.open = !this.open
+    },
+    hide(){
+      this.open = true
+    },
+    show(){
+      this.open = false
     }
   }
 }
@@ -67,4 +81,16 @@ section.app-header
   left: 0
   width: 100%
   z-index: 20
+
+section.app-header
+  .container
+    
+    .navigation
+      @media (max-width: $breakpoint-desktop)
+        display: none  
+    .hamburger
+      @media (min-width: $breakpoint-desktop)
+        display: none  
+
 </style>
+ 
