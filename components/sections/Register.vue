@@ -8,7 +8,7 @@ section.register
 </template>
 <script>
 export default {
-  
+
 }
 </script>
 <style lang="sass" scoped>
@@ -18,10 +18,10 @@ section.register
   background: $white
   color: $black
   .container
-    .content  
+    .content
       text-align: center
       h2
-        width: 65%
+        // width: 65%
         margin: 0 auto
         margin-top: $space*1.5
         padding: $space*3
