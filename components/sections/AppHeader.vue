@@ -4,9 +4,10 @@ section.app-header(:class="{dark: isScroll, open: open}")
     a.logo(href="#", v-scroll-to="'.hero'")
       img(src="@/assets/images/logo.png", alt="")
     a.hamburger(@click="toggle()"  :class="{open: open}")
-       img(src="@/assets/images/hamburger.png") 
+      img(v-if="open", src="@/assets/images/close.png")
+      img(v-else, src="@/assets/images/hamburger.png")
     .menu(:class="{open: open}")      
-      .mask(@click="toggle()")
+      .mask(v-if="open", @click="hide()")
       nav.navigation(:class="{open: open}" )
         .primary
           a(href="#", v-scroll-to="'.about'") About
@@ -47,6 +48,12 @@ export default {
     },
     toggle(){
       this.open = !this.open
+    },
+    show () {
+      this.open = true
+    },
+    hide () {
+      this.open = false
     }
   }
 }
@@ -85,7 +92,7 @@ section.app-header
           flex-direction: column
           justify-content: flex-start
           background: $event-blue
-          width: $space*15
+          width: 100%
           padding-top: $space*4
           position: fixed
           right: 0
@@ -94,15 +101,17 @@ section.app-header
           .primary
             @include flex
             flex-direction: column
-          .secondary
-            padding: $space*2  
-  
+            padding: $space
+            a
+              padding: $space
+              font-size: 1.4rem
     .hamburger
       display: none 
       position: absolute
       right: 0
       cursor: pointer
       z-index: 20
+      padding: $space*2
       display: none
       @media (max-width: $breakpoint-desktop)
         display: block
@@ -116,15 +125,12 @@ section.app-header
           right: 0
           top: 0
           bottom: 0
+        
           .mask
             position: fixed
             right: 0
             top: 0
             bottom: 0 
             left: 0   
-
-
-
-
 </style>
  
