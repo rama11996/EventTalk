@@ -76,9 +76,6 @@ section.speakers
             min-width: 300px
             -webkit-filter: grayscale(100%)
             filter: grayscale(100%)
-            &:hover
-              -webkit-filter: grayscale(100%)
-              filter: grayscale(0%)
         .details
           background: #FFFFFF
           height: 150px
@@ -105,6 +102,10 @@ section.speakers
               margin: $space/2
         &:hover
           cursor: pointer
+          .image
+            img
+              -webkit-filter: grayscale(100%)
+              filter: grayscale(0%)
           .details
             height: 180px
           .social
