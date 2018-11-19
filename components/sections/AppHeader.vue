@@ -3,20 +3,21 @@ section.app-header(:class="{dark: isScroll, open: open}")
   .container
     a.logo(href="#", v-scroll-to="'.hero'")
       img(src="@/assets/images/logo.png", alt="")
-    .mask(v-if="open", @click="hide()")  
-    a.hamburger(@click="toggle()")
-       img(src="@/assets/images/hamburger.png")    
-    nav.navigation
-      .primary
-        a(href="#", v-scroll-to="'.about'") About
-        a(href="#", v-scroll-to="'.speakers'") Speakers
-        a(href="#", v-scroll-to="'.agenda'") Agenda
-        a(href="#", v-scroll-to="'.sign-up'") SignUp
-        a(href="#", v-scroll-to="'.sponsors'") Sponsors
-        a(href="#", v-scroll-to="'.register'") Register
-        a(href="#", v-scroll-to="'.app-footer'") Contact
-      .secondary
-        a.btn.small(href="#", v-scroll-to="'.tickets'") Buy Ticket
+    a.hamburger(@click="toggle()"  :class="{open: open}")
+       img(src="@/assets/images/hamburger.png") 
+    .menu(:class="{open: open}")      
+      .mask(@click="toggle()")
+      nav.navigation(:class="{open: open}" )
+        .primary(:class="{open: open}" )
+          a(href="#", v-scroll-to="'.about'") About
+          a(href="#", v-scroll-to="'.speakers'") Speakers
+          a(href="#", v-scroll-to="'.agenda'") Agenda
+          a(href="#", v-scroll-to="'.sign-up'") SignUp
+          a(href="#", v-scroll-to="'.sponsors'") Sponsors
+          a(href="#", v-scroll-to="'.register'") Register
+          a(href="#", v-scroll-to="'.app-footer'") Contact
+        .secondary
+          a.btn.small(href="#", v-scroll-to="'.tickets'") Buy Ticket
 
 </template>
 
@@ -46,19 +47,18 @@ export default {
     },
     toggle(){
       this.open = !this.open
-    },
-    hide(){
-      this.open = true
-    },
-    show(){
-      this.open = false
     }
   }
 }
 </script>
 <style lang="sass" scoped>
 @import 'assets/styles/includes'
-
+// @mixin full-screen
+//   position: fixed
+//   right: 0
+//   top: 0
+//   bottom: 0
+//   left: 0
 section.app-header
   background: $event-blue
   color: $white
@@ -84,13 +84,34 @@ section.app-header
 
 section.app-header
   .container
-    
     .navigation
+      position: fixed
+      top: 5rem
+      right: 0rem 
       @media (max-width: $breakpoint-desktop)
-        display: none  
+        visibility: hidden
+        @include flex
+        flex-direction: column
+        .primary 
+          &.open a
+            display: block
+            color: black
+        &.open
+          visibility: visible 
     .hamburger
-      @media (min-width: $breakpoint-desktop)
-        display: none  
+      display: none 
+      position: absolute
+      right: 0
+      font-size: 2rem 
+      padding: 0.5rem 0 0 1rem
+      cursor: pointer
+      z-index: 2
+      display: none
+      @media (max-width: $breakpoint-desktop)
+        display: block
+
+
+
 
 </style>
  
