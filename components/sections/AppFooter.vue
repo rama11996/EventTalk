@@ -12,14 +12,17 @@ section.app-footer
         img(src="@/assets/images/be.png")
         img(src="@/assets/images/linkedin.png")
     .venue
-      img.location(src="@/assets/images/location.png")
-      span Venue Location
-      .date
-        h4 12-15 November 2018
-        h5 358/1, Hosur road, Ayappa garden,Adugodi,Bangalore, Karantaka - 560 030
-        h4.direction Get Direction&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
+      .venue-container
+        img.location(src="@/assets/images/location.png")
+        span Venue Location
+        .date
+          h5 12-15 November 2018
+          h6 358/1, Hosur road, Ayappa garden,Adugodi,Bangalore, Karantaka - 560 030
+        .direction
+          span.dir Get Direction&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          img(src="@/assets/images/dir.png")
+          h6 Privacy Policy | Terms and Conditions
   .copyrights
-    h6.terms Privacy Policy | Terms & Conditions
     h6.rights @2018.All Rights Reserved by eventtalk.com
 </template>
 <script>
@@ -27,7 +30,7 @@ export default {
   data () {
     return {
       externals: [
-    
+
       ]
     }
   }
@@ -39,43 +42,43 @@ export default {
 section.app-footer
   background: $event-lightblue
   color: $white
-  padding: $space*4
+  padding: $space*2
   .container
-    @include spread
-    @media (max-width: $breakpoint-tab-2)                                                     
-      @include flex
-      flex-direction: column-reverse
+    @media (min-width: $breakpoint-tab-1)
+      @include spread
 
   .copyrights
     text-align: center
-    padding-top: $space*1
-    .rights, .terms
-      padding: $space/2
+    padding-top: $space*5
 
 
-//social
+// social
 .social
   flex: 1
-  padding-top: $space*4
   .external
     padding-top: $space*2
     img
       margin: $space/2
-  
+
 
 .venue
   flex: 1
-  //padding: $space
+  padding-top: $space*4
   text-align: center
   @media (min-width: $breakpoint-tab-3)
-    padding-left: $space*8
     border-left: 1px solid $white
+    text-align: left
+    .venue-container
+      padding-left: $space*12
+
   span
-    font-size: 2rem
-  .date
-    h4
+    font-size: 1.5rem
+  .date, .direction
+    span, h5
       color: $event-actionpink
-    h4.direction, h6, h4
-      margin-top: $space*2
+    span.dir, h6, h5
+      margin-top: $space
+    span.dir
+      font-size: 1.2rem
 </style>
 
