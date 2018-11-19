@@ -58,7 +58,10 @@ p
       flex-direction: row-reverse
   .thumb, .item-content
     flex: 1
-  
+    text-align: center
+  .item-content 
+    p
+      margin-bottom: $space*2.5
 
 </style>
 
