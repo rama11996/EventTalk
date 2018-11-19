@@ -8,7 +8,7 @@ section.app-header(:class="{dark: isScroll, open: open}")
     .menu(:class="{open: open}")      
       .mask(@click="toggle()")
       nav.navigation(:class="{open: open}" )
-        .primary(:class="{open: open}" )
+        .primary
           a(href="#", v-scroll-to="'.about'") About
           a(href="#", v-scroll-to="'.speakers'") Speakers
           a(href="#", v-scroll-to="'.agenda'") Agenda
@@ -53,12 +53,7 @@ export default {
 </script>
 <style lang="sass" scoped>
 @import 'assets/styles/includes'
-// @mixin full-screen
-//   position: fixed
-//   right: 0
-//   top: 0
-//   bottom: 0
-//   left: 0
+
 section.app-header
   background: $event-blue
   color: $white
@@ -84,31 +79,49 @@ section.app-header
 
 section.app-header
   .container
-    .navigation
-      position: fixed
-      top: 5rem
-      right: 0rem 
-      @media (max-width: $breakpoint-desktop)
-        visibility: hidden
-        @include flex
-        flex-direction: column
-        .primary 
-          &.open a
-            display: block
-            color: black
-        &.open
-          visibility: visible 
+    .menu 
+      .navigation
+        @media (max-width: $breakpoint-desktop)
+          flex-direction: column
+          justify-content: flex-start
+          background: $event-blue
+          width: $space*15
+          padding-top: $space*4
+          position: fixed
+          right: 0
+          top: 0
+          bottom: 0
+          .primary
+            @include flex
+            flex-direction: column
+          .secondary
+            padding: $space*2  
+  
     .hamburger
       display: none 
       position: absolute
       right: 0
-      font-size: 2rem 
-      padding: 0.5rem 0 0 1rem
       cursor: pointer
-      z-index: 2
+      z-index: 20
       display: none
       @media (max-width: $breakpoint-desktop)
         display: block
+    
+    .menu
+      @media (max-width: $breakpoint-desktop)
+        display: none
+        &.open
+          display: block
+          position: fixed
+          right: 0
+          top: 0
+          bottom: 0
+          .mask
+            position: fixed
+            right: 0
+            top: 0
+            bottom: 0 
+            left: 0   
 
 
 
