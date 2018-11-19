@@ -29,26 +29,27 @@ section.hero
   background-repeat: no-repeat
   color: $white
   min-height: 100vh
-  padding-top: $space*10
+  padding-top: $space*8
   .container
-    @include spread
-    @media (max-width: $breakpoint-tab-3)
-      flex-direction: column
-      .image
-        margin: $space*10
-
-    .content
-      @media (max-width: $breakpoint-tab-3)
-        text-align: center
-        h2
-          text-align: center
-      .cta
-        margin-top: $space*6
+    text-align: center
+    @media (min-width: $breakpoint-tab-1)
+      @include spread
+      text-align: left
+    .image
+      margin-top: $space*6
+      img
+        max-width: 100%
+    .cta
+      margin-top: $space*6
 
 h2
-  text-align: left
-  font-size: 3.5rem
+  text-align: center
+  font-size: 3rem
   font-weight: normal
-
+  @media (min-width: $breakpoint-tab-1)
+    text-align: left
+h1
+  @media (max-width: $breakpoint-tab-1)
+    font-size: 3rem
 
 </style>
