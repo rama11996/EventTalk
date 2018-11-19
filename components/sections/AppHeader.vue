@@ -125,7 +125,7 @@ section.app-header
           right: 0
           top: 0
           bottom: 0
-        
+
           .mask
             position: fixed
             right: 0
