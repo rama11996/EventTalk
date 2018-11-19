@@ -38,10 +38,13 @@ export default {
 section.about
   background: $white
   color: $black
-  padding: $space*3
+  padding-top: $space*7
   .content
     text-align: center
-    padding: $space*3
+    > p
+      max-width: 50rem
+      margin: 0 auto
+      padding-top: $space*2
 p
   color: $neutral-light
   margin-top: $space*2
@@ -50,18 +53,25 @@ p
 
 .item
   @include flex
+  align-items: center
+  margin-bottom: $space*2
+  padding-top: $space*4
   @media (max-width: $breakpoint-tab-3)
     flex-direction: column-reverse
-  margin-bottom: $space*2
   @media (min-width: $breakpoint-tab-3)
     &:nth-child(odd)
       flex-direction: row-reverse
   .thumb, .item-content
     flex: 1
-    text-align: center
+  .thumb
+    img
+      max-width: 80%
   .item-content
     p
       margin-bottom: $space*2.5
+    @media (max-width: $breakpoint-tab-3)
+      h3
+        text-align: center
 
 
 </style>

@@ -60,7 +60,7 @@ export default {
 @import 'assets/styles/includes'
 
 section.app-header
-  background: $event-blue
+  // background: $event-blue
   color: $white
   @include fixed-n
   .container
@@ -79,6 +79,7 @@ section.app-header
 
 
 .app-header.dark
+  background: $event-blue
   transition: background-color 0.35s, border 0.35s
   position: fixed
   top: 0
@@ -99,7 +100,7 @@ section.app-header
     display: block
     @include absolute-e
     margin: $space*1.5
-    padding-top: $space*1.5
+    padding-top: $space*2
     @media (min-width: $breakpoint-appheader)
       display: none
 
@@ -119,7 +120,7 @@ section.app-header
     align-items: center
     text-align: center
     @include fixed-s
-    bottom: 4rem
+    bottom: 5rem
 
 // section.app-header
 //   .container

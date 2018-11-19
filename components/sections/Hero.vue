@@ -29,7 +29,7 @@ section.hero
   background-repeat: no-repeat
   color: $white
   min-height: 100vh
-  padding-top: $space*8
+  padding-top: $space*9
   .container
     text-align: center
     @media (min-width: $breakpoint-tab-1)
