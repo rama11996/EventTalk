@@ -88,18 +88,22 @@ section.speakers
             margin-top: 1.5rem
             font-weight: 700
         .social
+          @include flex
           background: $event-hoverpink
           overflow: hidden
           width: 100%
           height: 0px
           transition: all 0.5s
           position: absolute
-          bottom: 0
+          top: 87%
           left: 0
           right: 0
           .logos
             img
               margin: $space/2
+          .story
+              @include flex
+              color: $white
         &:hover
           cursor: pointer
           .image
@@ -109,12 +113,12 @@ section.speakers
           .details
             height: 180px
           .social
-            @include flex
-            height: 15%
-            padding: 0.5rem
-            .story
-              @include flex
-              color: $white
+            height: 15%   
+          .image
+            img
+              -webkit-filter: grayscale(100%)
+              filter: grayscale(0%)
+              padding-bottom: 0.5rem
 
 
 section.speakers
