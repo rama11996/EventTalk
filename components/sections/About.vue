@@ -46,7 +46,7 @@ p
   color: $neutral-light
   margin-top: $space*2
   line-height: 2rem
- 
+
 
 .item
   @include flex
@@ -59,9 +59,10 @@ p
   .thumb, .item-content
     flex: 1
     text-align: center
-  .item-content 
+  .item-content
     p
       margin-bottom: $space*2.5
+
 
 </style>
 

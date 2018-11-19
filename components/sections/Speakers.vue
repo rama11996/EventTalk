@@ -3,7 +3,7 @@ section.speakers
   .container
     .content
       h2 Who's Speaking?
-      p  In publishing and graphic design, lorem ipsum is a placeholder text used 
+      p  In publishing and graphic design, lorem ipsum is a placeholder text used
     .profile
       .card(v-for="speaker in speakers")
         .image
@@ -18,7 +18,7 @@ section.speakers
             img(src="@/assets/images/instagram.png")
             img(src="@/assets/images/tripple.png")
           .story
-            h5 Story  
+            h5 Story
             img(src="@/assets/images/arrow.png")
     button.btn.btn-primary View All Speakers
 
@@ -29,21 +29,21 @@ export default {
   data() {
     return{
     speakers:[
-      {image:'images/speaker-1.jpg', name:'Manuel Neuer',company:'CEO,Spinboard'},  
+      {image:'images/speaker-1.jpg', name:'Manuel Neuer',company:'CEO,Spinboard'},
       {image:'images/speaker-2.jpg', name:'Toni Duggon',company:'GM,Pixelperfect'},
       {image:'images/speaker-3.jpg', name:'Harman Kardon',company:'CEO,Mockplus'}
   ]
  }
 }
-  
+
 }
 </script>
 <style lang="sass" scoped>
 @import 'assets/styles/includes'
 
 section.speakers
-  background: url(/assets/images/speakers-banner.png) $neutral
-  background-size: contain
+  background: url(/images/speakers/speakers-banner.png)
+  background-size: cover
   background-repeat: no-repeat
   min-height: 100vh
   color: $black
@@ -107,18 +107,18 @@ section.speakers
             height: 180px
           .social
             @include flex
-            height: 15% 
+            height: 15%
             padding: 0.5rem
             .story
               @include flex
               color: $white
-        
+
 
 section.speakers
   .container
     .btn
       margin: 0 auto
       display: block
-  
+
 </style>
 
