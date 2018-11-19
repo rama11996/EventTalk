@@ -3,7 +3,7 @@ section.hero
   AppHeader
   .container
     .content
-      h2 Freelancers 
+      h2 Freelancers
       h1 Conferences 2018
       h5 12 - 15 November with over 20 sessions - Bangalore,India
       .cta
@@ -36,7 +36,7 @@ section.hero
       flex-direction: column
       .image
         margin: $space*10
-        
+
     .content
       @media (max-width: $breakpoint-tab-3)
         text-align: center
@@ -44,7 +44,7 @@ section.hero
           text-align: center
       .cta
         margin-top: $space*6
-        
+
 h2
   text-align: left
   font-size: 3.5rem
