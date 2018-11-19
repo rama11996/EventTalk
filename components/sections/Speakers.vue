@@ -51,6 +51,8 @@ section.speakers
   .container
     .content
       text-align: center
+      h2
+        margin-bottom: $space*2
 
 section.speakers
   .container
