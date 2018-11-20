@@ -3,8 +3,12 @@ section.sponsors
   .container
     h2 Sponsors
     p Conferences Deticated to building remarkable events
+    //- ul.item-list
+    //-   li.sponsor-item(v-for="(s, j) in inactive", :key="j")
+    //-     .thumb
+    //-       img(:src="s.image")
     ul.item-list
-      li.sponsor-item(v-for="(s, i) in sponsors", :key="i")
+      li.sponsor-item(v-for="(s, i) in activeSponsors", :key="i")
         .thumb
           img(:src="s.image")
     .cta
@@ -14,35 +18,64 @@ section.sponsors
 export default {
   data () {
     return {
-      sponsors: [
+      activeSponsors: [
         {
-          image: 'images/sponsors/sponsor1.png'
+          image: 'images/sponsors/activesponsor/sponsor1.png'
         },
         {
-          image: 'images/sponsors/sponsor2.png'
+          image: 'images/sponsors/activesponsor/sponsor2.png'
         },
         {
-          image: 'images/sponsors/sponsor3.png'
+          image: 'images/sponsors/activesponsor/sponsor3.png'
         },
         {
-          image: 'images/sponsors/sponsor4.png'
+          image: 'images/sponsors/activesponsor/sponsor4.png'
         },
         {
-          image: 'images/sponsors/sponsor5.png'
+          image: 'images/sponsors/activesponsor/sponsor5.png'
         },
         {
-          image: 'images/sponsors/sponsor6.png'
+          image: 'images/sponsors/activesponsor/sponsor6.png'
         },
         {
-          image: 'images/sponsors/sponsor7.png'
+          image: 'images/sponsors/activesponsor/sponsor7.png'
         },
         {
-          image: 'images/sponsors/sponsor8.png'
+          image: 'images/sponsors/activesponsor/sponsor8.png'
         },
         {
-          image: 'images/sponsors/sponsor8.png'
+          image: 'images/sponsors/activesponsor/sponsor8.png'
         },
-      ]
+      ],
+      // inactive: [
+      //   {
+      //     image: 'images/sponsors/inactive/sponsor1.png'
+      //   },
+      //   {
+      //     image: 'images/sponsors/inactive/sponsor2.png'
+      //   },
+      //   {
+      //     image: 'images/sponsors/inactive/sponsor3.png'
+      //   },
+      //   {
+      //     image: 'images/sponsors/inactive/sponsor4.png'
+      //   },
+      //   {
+      //     image: 'images/sponsors/inactive/sponsor5.png'
+      //   },
+      //   {
+      //     image: 'images/sponsors/inactive/sponsor6.png'
+      //   },
+      //   {
+      //     image: 'images/sponsors/inactive/sponsor7.png'
+      //   },
+      //   {
+      //     image: 'images/sponsors/inactive/sponsor8.png'
+      //   },
+      //   {
+      //     image: 'images/sponsors/inactive/sponsor8.png'
+      //   },
+      // ]
     }
   }
 }
@@ -54,7 +87,7 @@ section.sponsors
   background: $white
   color: $black
   @media (min-width: $breakpoint-tab-1)
-    padding: $space*4
+    padding: $space*5
 
   .container
     text-align: center
@@ -76,15 +109,18 @@ section.sponsors
       border-right: none
     &:nth-last-child(-n+3)
       border-bottom: none
-    @media (max-width: $breakpoint-desktop)   
-      width: 50%
+    @media (max-width: $breakpoint-desktop)
+      width: 75%
       border-right: none
-      border-bottom: none 
-   
+      border-bottom: none
+
+
     img
       padding: $space*4
       opacity: 0.1
       cursor: pointer
+      @media (max-width: $breakpoint-desktop)
+        padding: $space*2
       &:hover
         opacity: 1
         transition: all 0.5s
