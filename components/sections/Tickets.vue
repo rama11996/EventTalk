@@ -6,11 +6,11 @@ section.tickets
       .tabs
         a.btn(
           :class="{'primary-small': active === 'Standard'}"
-          @click="activate('Standard')") 
+          @click="activate('Standard')")
           | Standard
         a.btn(
           :class="{'primary-small': active === 'Premium'}"
-          @click="activate('Premium')") 
+          @click="activate('Premium')")
           | Premium
       p loremcombined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humourc
     .pricing
@@ -18,7 +18,7 @@ section.tickets
         h2 {{ p.type }}
         h4 {{ p.price }}
         ul
-          li.feature(v-for="(f, j) in p.features" :key="j") 
+          li.feature(v-for="(f, j) in p.features" :key="j")
             span {{ f }}
         .cta
           a.btn.btn-primary Buy Ticket
@@ -68,16 +68,19 @@ section.tickets
   .container
     @include flex
     overflow: visible
-    @media (max-width: $breakpoint-tab-3)
+    @media (max-width: $breakpoint-tab-1)
       display: block
 
 
 .ticket-content
   width: 30rem
-  // flex: 1
+  @media (max-width: $breakpoint-tab-1)
+    width: 100%
+    text-align: center
   h2
     text-align: left
-    @media (max-width: $breakpoint-tab-3)
+    @media (max-width: $breakpoint-tab-1)
+      font-size: 2rem
       text-align: center
   .tabs
     margin-top: $space*3
@@ -88,7 +91,7 @@ section.tickets
     @media (max-width: $breakpoint-tab-3)
       border-radius: 40px
       border: 2px solid $event-blue
-      
+
     a.btn
       font-size: 1.5rem
       border-radius: 50px
@@ -96,8 +99,8 @@ section.tickets
       background: none
       color: $event-blue
       border-color: transparent
-      @media (max-width: $breakpoint-tab-3)
-        padding: $space/2 $space*1
+      @media (max-width: $breakpoint-tab-1)
+        font-size: 1rem
       &.primary-small
         background: $event-blue
         color: $white
@@ -109,9 +112,8 @@ a
 
 p
   padding-top: $space*3
-  @media (max-width: $breakpoint-tab-3)
+  @media (max-width: $breakpoint-tab-1)
     text-align: center
-  
 
 .pricing
   flex: 1
@@ -122,6 +124,9 @@ p
     width: 25rem
     height: 40rem
     margin: 1rem
+    @media (max-width: $breakpoint-tab-1)
+      width: 22rem
+      height: 40rem
   h2
     font-weight: normal
     border-bottom: 2px solid $neutral
@@ -153,7 +158,7 @@ p
   0%
     opacity: 0.5
     transform: translateX(15rem) scale(0.9)
-  50% 
+  50%
     opacity: 1
     transform: translateX(20rem) scale(1)
   100%
@@ -164,7 +169,7 @@ p
   0%
     opacity: 1
     transform: translateX(0) scale(1)
-  50% 
+  50%
     opacity: 1
     transform: translateX(-5rem) scale(0.9)
   100%
