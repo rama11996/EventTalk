@@ -9,37 +9,42 @@ section.sign-up
 </template>
 <script>
 export default {
-  
+
 }
 </script>
 <style lang="sass" scoped>
 @import 'assets/styles/includes'
 
 section.sign-up
-  background: url(/assets/images/hero-banner.png)  $event-blue
-  background-size: contain
+  background: url(/images/bottom-banner.png)  #310883
+  background-size: cover
   background-repeat: no-repeat
   color: $white
+  max-width: 100%
   .container
-    .content  
+    .content
       text-align: center
       padding: $space*3.5
       h2
-        width: 65%
-        margin: 0 auto
-        
+        font-weight: 500
+
         padding-bottom: $space*2
       p
-        margin: 0 auto
-        width: 62%
         color: $white
         padding-bottom: $space*2
       .btn
         border-radius: 0 10px 10px 0
         padding: $space*1.2 $space*2.5
-        
+        @media (max-width: $breakpoint-tab-1)
+          border-radius: 10px
+          margin-top: $space*2
+
       input
         padding: $space*1.8 $space*16 $space*1.5 $space
         border-radius: 10px 0 0 10px
         border: none
+        @media (max-width: $breakpoint-tab-1)
+          border-radius: 10px
+          text-align: center
+          margin-left: -2.5rem
 </style>
