@@ -13,7 +13,7 @@ section.agenda
             h6 {{ s.type }}
           .session-title
             h3 {{ s.title }}
-            h6 {{ s.content }}
+            p {{ s.content }}
           .session-speaker
             img(v-if="s.image", :src="s.image")
 </template>
@@ -53,24 +53,61 @@ section.agenda
       background: none
       color: #656565
       border-color: transparent
+      @media (max-width: $breakpoint-tab-1)
+        padding: $space/2
+        font-size: 0.25rem !important
+        width: 100%
+        margin: 0.125rem
       &.btn-primary
         background: $event-blue
         color: $white
 
 .sessions
   margin-top: $space*7
+  @media (max-width: $breakpoint-tab-1)
+    margin-top: $space*4
   .session
     padding: $space*3
     @include flex
-    border-top: 1px solid #d5d5d7
+    @media (min-width: $breakpoint-tab-1)
+      border-top: 1px solid #d5d5d7
+    @media (max-width: $breakpoint-tab-1)
+      display: block
+      padding: 0
+      border: 1px dotted #d5d5d7
     h4
       text-align: center
       font-weight: 500
+      @media (max-width: $breakpoint-tab-1)
+        text-align: left
+        font-weight: 400
+    .time
+      @media (max-width: $breakpoint-tab-1)
+        background: $event-blue
+        color: $white
+        margin: 0
+        padding: $space
     .session-title
       width: 30rem
       text-align: left
+      > p
+        text-align: left
+        margin-top: $space
+      @media (max-width: $breakpoint-tab-1)
+        width: 100%
+        padding: $space*2
+        h3
+          font-size: 1.5rem !important
+        p
+          white-space: normal
+          word-break: break-all
 p
   text-align: center
   margin-top: 3rem
+
+.session-speaker
+  @media (max-width: $breakpoint-tab-1)
+    img
+      display: none
 </style>
 
