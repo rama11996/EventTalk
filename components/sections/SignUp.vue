@@ -4,8 +4,9 @@ section.sign-up
     .content
       h2 Stay up to date
       p Do you want to stay o the loop and to be notified when we organise another conference meetup?
-      input(type="text" placeholder="Your email address")
-      button.btn Sign Up
+      .register
+        input(type="text" placeholder="Your email address")
+        button.btn Sign Up
 </template>
 <script>
 export default {

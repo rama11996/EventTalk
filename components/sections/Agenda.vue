@@ -42,6 +42,7 @@ section.agenda
   background: $white
   color: $black
   padding: $space*3
+  
 .content
   nav
     margin-top: $space*5
