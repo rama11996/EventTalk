@@ -68,6 +68,8 @@ section.tickets
   .container
     @include flex
     overflow: visible
+    @media (max-width: $breakpoint-tab-3)
+      display: block
 
 
 .ticket-content
@@ -75,12 +77,18 @@ section.tickets
   // flex: 1
   h2
     text-align: left
+    @media (max-width: $breakpoint-tab-3)
+      text-align: center
   .tabs
     margin-top: $space*3
     border: 2px solid $event-blue
-    border-radius: 40px
     padding: $space*1.5
+    border-radius: 40px
     text-transform: normal
+    @media (max-width: $breakpoint-tab-3)
+      border-radius: 40px
+      border: 2px solid $event-blue
+      
     a.btn
       font-size: 1.5rem
       border-radius: 50px
@@ -88,6 +96,8 @@ section.tickets
       background: none
       color: $event-blue
       border-color: transparent
+      @media (max-width: $breakpoint-tab-3)
+        padding: $space/2 $space*1
       &.primary-small
         background: $event-blue
         color: $white
@@ -99,6 +109,9 @@ a
 
 p
   padding-top: $space*3
+  @media (max-width: $breakpoint-tab-3)
+    text-align: center
+  
 
 .pricing
   flex: 1
